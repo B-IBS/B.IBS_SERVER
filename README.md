@@ -1,7 +1,7 @@
 <img src='./.github/logo-name.png' width=400>
 
-# B.IBS - APP
+# B.IBS - SERVER
 <br>
 
 ## Technologies
-- ### Flutter (Dart)
+- ### Apollo (TypeScript)
