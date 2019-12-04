@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c33cfc0-523b-4964-b2ba-840e0ea15a63" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/resolvers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/schema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9af20dae-6f79-4242-ac6b-4edd67fc8221" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/B.IBS_SERVER.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resolvers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resolvers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/schema.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1UQiJB4FOOoPBTq7TotH3i3UEIn" />
+  <component name="ProjectId" id="1UVwpqYen1Ta34NE1285HiewHEs" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -53,14 +48,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2c33cfc0-523b-4964-b2ba-840e0ea15a63" name="Default Changelist" comment="" />
-      <created>1575295145900</created>
+      <changelist id="9af20dae-6f79-4242-ac6b-4edd67fc8221" name="Default Changelist" comment="" />
+      <created>1575455255438</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1575295145900</updated>
-      <workItem from="1575295147281" duration="4976000" />
-      <workItem from="1575378994437" duration="1273000" />
-      <workItem from="1575452749858" duration="828000" />
+      <updated>1575455255438</updated>
+      <workItem from="1575455256695" duration="268000" />
     </task>
     <servers />
   </component>
