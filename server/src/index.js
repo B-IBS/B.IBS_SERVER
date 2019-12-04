@@ -1,6 +1,6 @@
-const { ApolloServer, gql } = import('apollo-server');
-const resolvers = import('./resolvers');
-const typeDefs = import('./schema');
+const { ApolloServer, gql } = require('apollo-server');
+const resolvers = require('./resolvers');
+const typeDefs = require('./schema');
 
 
 //A CHANGER AVEC La DB
