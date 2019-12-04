@@ -5,6 +5,10 @@ const typeDefs = gql`
         me: User!
     }
     
+    type Mutation {
+        login(email: String!): String!
+    }
+    
     type User {
         name: String!
         password: String!
