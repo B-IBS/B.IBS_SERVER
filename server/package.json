@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.9.12",
+    "bcrypt": "^3.0.7",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "graphql-type-json": "^0.3.1",
+    "mongodb": "^3.3.5",
+    "mongoose": "^5.7.13"
+  }
+}
