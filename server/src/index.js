@@ -23,7 +23,7 @@ db.once('open', function() {
 
 
 // EXEMPLE
-var kittySchema = new mongoose.Schema({
+/*var kittySchema = new mongoose.Schema({
     name: String
 });
 kittySchema.methods.speak = function () {
@@ -44,13 +44,16 @@ fluffy.save(function (err, fluffy) {
 Kitten.find(function (err, kittens) {
     if (err) return console.error(err);
     console.log(kittens);
-});
+});*/
 
 
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: context => ({db})
+    resolverValidationOptions: {
+        requireResolversForResolveType: false
+    },
+    context: context => ({mongoose})
 });
 
 
