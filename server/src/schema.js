@@ -14,9 +14,23 @@ const typeDefs = gql`
         data: [Foodmap]!
     }
     
+    
     type Foodmap {
         aliment: String!
         trigger: Int!
+    }
+
+    type WidgetResponse implements QueryResponse {
+        code: String!
+        success: Boolean!
+        message: String!
+        data: [Widget]!
+    }
+
+    type Widget {
+        name: String!
+        description: String!
+        tags: [String!]!
     }
     
     type User {
@@ -28,6 +42,7 @@ const typeDefs = gql`
     type Query {
         me: User!
         foodMap(token: String!): FoodmapResponse!
+        widget(token: String!): WidgetResponse!
     }
 
     type Mutation {
