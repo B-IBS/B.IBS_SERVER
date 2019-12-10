@@ -23,6 +23,20 @@ module.exports = {
                 data: [{intensity: 10, Date: new Date()}]
             }
         },
+        widget: async (parent, args, context, info) => {
+            console.log(args.token);
+            return {
+                code: "0",
+                success: true,
+                message: "success",
+                data: [{
+                    name: "foodMap",
+                    description: "Le régime FODMAP a été développé par Sue Shepard, nutritionniste australienne. Ce régime a pour but de soulager les symptômes du syndrome de l’intestin irritable (SII)",
+                    tags: ["Soin"],
+                },
+                ]
+            }
+        },
     },
     Mutation: {
         login: async (parent, args, context, info) => {
