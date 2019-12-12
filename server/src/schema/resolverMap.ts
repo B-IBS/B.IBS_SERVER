@@ -7,7 +7,7 @@ const resolverMap: IResolvers = {
         helloWorld(_: void, args: void): string {
             return `👋 Hello world! 👋`;
         },
-        foodMap(parent, args, context, info) {
+        fodMap(parent, args, context, info) {
             return {
                 code: "0",
                 success: true,
@@ -20,10 +20,40 @@ const resolverMap: IResolvers = {
                 code: "0",
                 success: true,
                 message: "Success",
-                data: [{date: Date, intensity: 1}, {date: Date, intensity: 5}, {date: Date, intensity: 7}, {date: Date, intensity: 3}, {date: Date, intensity: 9}, {date: Date, intensity: 3}]
+                data: [{date: Date, intensity: 1}, {date: Date, intensity: 5}, {date: Date, intensity: 7}, {
+                    date: Date,
+                    intensity: 3
+                }, {date: Date, intensity: 9}, {date: Date, intensity: 3}]
             }
         },
-
+        widget(parent, args, context, info) {
+            return {
+                code: "0",
+                success: true,
+                message: "Success",
+                data: [
+                    {
+                        name: "Fodmap",
+                        desc: "",
+                        image: "https://images.emojiterra.com/twitter/v12/512px/1f346.png",
+                        tags: ["food", "validation"]
+                    },
+                    {
+                        name: "Sophrologie",
+                        desc: "La sophrologie est une méthode psychocorporelle utilisée comme technique thérapeutique ou vécue comme une philosophie de vie",
+                        image: " https://cdn.icon-icons.com/icons2/1576/PNG/512/3561857-bedroom-emoji-emoticon-rest-sleep-sleeping_107895.png",
+                        tags: ["Sommeil"]
+                    }
+                    ,
+                    {
+                        name: "Sophrologie",
+                        desc: "La sophrologie est une méthode psychocorporelle utilisée comme technique thérapeutique ou vécue comme une philosophie de vie",
+                        image: " https://cdn.icon-icons.com/icons2/1576/PNG/512/3561857-bedroom-emoji-emoticon-rest-sleep-sleeping_107895.png",
+                        tags: ["Sommeil"]
+                    }
+                ]
+            }
+        },
     },
 };
 export default resolverMap;
