@@ -12,8 +12,9 @@ export let Schema = mongoose.Schema;
 export let ObjectId = mongoose.Schema.Types.ObjectId;
 export let Mixed = mongoose.Schema.Types.Mixed;
 
-
 const url = 'mongodb://localhost:27017';
+
+let a = 10;
 
 mongoose.connect(url, {
     useNewUrlParser: true,
