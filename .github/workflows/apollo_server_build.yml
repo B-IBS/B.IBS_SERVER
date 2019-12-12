@@ -23,7 +23,7 @@ jobs:
       env:
         CI: true
     - name: Build servers
-      run: echo "en deploiement"
+      run: npm run build
       working-directory: ./server
       env:
         CI: true
