@@ -3,8 +3,9 @@ scalar DateTime
 type Query {
   helloWorld: String!
   fodMap: fodMap!
-  crises: crisesResponse!
+  crises(token: ID!): crisesResponse!
   widget: widgetResponse!
+  userFromToken(token: ID!): UserResponse!
 }
 
 interface QueryResponse {
@@ -13,11 +14,28 @@ interface QueryResponse {
   message: String!
 }
 
+type UserResponse implements QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  data: User
+}
+
+type User {
+  firstName: String!
+  lastName: String!
+  avatar: String
+  sex: String!
+  age: Int!
+  token: ID
+  job: String
+}
+
 type fodMap implements QueryResponse {
   code: String!
   success: Boolean!
   message: String!
-  data: [foodCategory]!
+  data: [foodCategory]
 }
 
 type foodCategory  {
@@ -35,7 +53,7 @@ type crisesResponse implements QueryResponse {
   code: String!
   success: Boolean!
   message: String!
-  data: [crise]!
+  data: [crise]
 }
 
 type crise {

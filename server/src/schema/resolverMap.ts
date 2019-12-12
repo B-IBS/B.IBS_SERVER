@@ -16,6 +16,7 @@ const resolverMap: IResolvers = {
             }
         },
         crises(parent, args, context, info) {
+            console.log(args.token);
             return {
                 code: "0",
                 success: true,
@@ -52,6 +53,23 @@ const resolverMap: IResolvers = {
                         tags: ["Sommeil"]
                     }
                 ]
+            }
+        },
+        userFromToken(parent, args, context, info) {
+            console.log(args.token);
+            return {
+                code: "0",
+                success: true,
+                message: "Success",
+                data: {
+                    firstName: "Romain",
+                    lastName: "Urinou",
+                    avatar: undefined,
+                    sex: "Homme",
+                    age: 20,
+                    token: args.token,
+                    job: "Etudiant",
+                }
             }
         },
     },
