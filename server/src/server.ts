@@ -7,10 +7,7 @@ import cors from 'cors';
 import schema from './schema';
 
 import mongoose from 'mongoose';
-
-export let Schema = mongoose.Schema;
-export let ObjectId = mongoose.Schema.Types.ObjectId;
-export let Mixed = mongoose.Schema.Types.Mixed;
+import User from "./models/user.model";
 
 const url = 'mongodb://localhost:27017';
 
@@ -28,18 +25,11 @@ mongoose.connection.on('error', (err) => {
     console.error('Unable to connect to Mongo via Mongoose', err);
 });
 
-// EXEMPLE DE LA DB
 
-let kittySchema = new mongoose.Schema({
-    name: String
-});
+// A ENLEVER
 
-let Kitten = mongoose.model('Kitten', kittySchema);
-let fluffy = new Kitten({name: 'fluffy'});
-
-Kitten.find(function (err, kittens) {
-    if (err) return console.error(err);
-    console.log(kittens);
+User.remove({}, function(err) {
+    console.log('collection removed')
 });
 
 const app = express();

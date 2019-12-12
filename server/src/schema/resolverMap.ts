@@ -1,4 +1,7 @@
 import {IResolvers} from 'graphql-tools';
+import {AuthenticationError} from 'apollo-server'
+import mongoose from 'mongoose';
+import User from './../models/user.model'
 
 const fodmap = require("./../../fodmap.json");
 
@@ -72,7 +75,56 @@ const resolverMap: IResolvers = {
                 }
             }
         },
+        async singIn(parent, args, context, info) {
+            let New = new User({
+                firstName: args.firstName,
+                lastName: args.lastName,
+                password: args.password,
+                email: args.email,
+                sex: args.sex,
+                age: args.age,
+                job: args.job
+            });
+            let element;
+            try {
+                element = await New.save();
+            } catch (e) {
+                console.error(e.errmsg);
+                return {
+                    code: e.code.toString(),
+                    success: false,
+                    message: e.errmsg,
+                }
+            }
+            console.log(element);
+            return {
+                code: "0",
+                success: true,
+                message: "Success",
+                data: {token: element._id}
+            };
+        },
+        async login(parent, args, context, info) {
+            const element = await User.findOne({email: args.email, password: args.password});
+            console.log(element);
+            User.find(function (error, element) {
+                console.log(element);
+            });
+            if (element == null) {
+                console.log("Not found");
+                return {
+                    code: "1",
+                    success: false,
+                    message: "Not found",
+                };
+            }
+            return {
+                code: "0",
+                success: true,
+                message: "Success",
+                data: {token: element._id}
+            };
+        },
     },
 };
 export default resolverMap;
-
