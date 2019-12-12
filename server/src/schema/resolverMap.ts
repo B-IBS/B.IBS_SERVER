@@ -17,3 +17,4 @@ const resolverMap: IResolvers = {
     },
 };
 export default resolverMap;
+

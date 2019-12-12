@@ -29,11 +29,14 @@ mongoose.connection.on('error', (err) => {
 });
 
 
+
+
+
+// EXEMPLE DE LA DB
+
 let kittySchema = new mongoose.Schema({
     name: String
 });
-
-// EXEMPLE DE LA DB
 
 let Kitten = mongoose.model('Kitten', kittySchema);
 let fluffy = new Kitten({name: 'fluffy'});
