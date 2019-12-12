@@ -1,3 +1,28 @@
 type Query {
   helloWorld: String!
+  foodMap: foodMap!
+}
+
+interface QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+}
+
+type foodMap implements QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  data: [foodCategory]!
+}
+
+type foodCategory  {
+  name: String!
+  image: String!
+  foods: [food!]
+}
+
+type food {
+  aliment: String!
+  trigger: Int!
 }

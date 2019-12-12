@@ -29,16 +29,14 @@ mongoose.connection.on('error', (err) => {
 });
 
 
-var kittySchema = new mongoose.Schema({
+let kittySchema = new mongoose.Schema({
     name: String
 });
 
-var Kitten = mongoose.model('Kitten', kittySchema);
-var fluffy = new Kitten({name: 'fluffy'});
+// EXEMPLE DE LA DB
 
-fluffy.save(function (err, fluffy) {
-    if (err) return console.error(err);
-});
+let Kitten = mongoose.model('Kitten', kittySchema);
+let fluffy = new Kitten({name: 'fluffy'});
 
 Kitten.find(function (err, kittens) {
     if (err) return console.error(err);
