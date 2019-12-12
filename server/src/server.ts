@@ -28,10 +28,6 @@ mongoose.connection.on('error', (err) => {
     console.error('Unable to connect to Mongo via Mongoose', err);
 });
 
-
-
-
-
 // EXEMPLE DE LA DB
 
 let kittySchema = new mongoose.Schema({

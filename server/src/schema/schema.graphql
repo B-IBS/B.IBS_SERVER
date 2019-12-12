@@ -1,6 +1,9 @@
+scalar DateTime
+
 type Query {
   helloWorld: String!
   foodMap: foodMap!
+  crises: crisesResponse!
 }
 
 interface QueryResponse {
@@ -26,3 +29,17 @@ type food {
   aliment: String!
   trigger: Int!
 }
+
+type crisesResponse implements QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  data: [crise]!
+}
+
+type crise {
+  date: DateTime!
+  intensity: Int!
+}
+
+
