@@ -1,0 +1,78 @@
+scalar DateTime
+
+type Query {
+  helloWorld: String!
+  fodMap: fodMap!
+  crises(token: ID!): crisesResponse!
+  widget: widgetResponse!
+  userFromToken(token: ID!): UserResponse!
+}
+
+interface QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+}
+
+type UserResponse implements QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  data: User
+}
+
+type User {
+  firstName: String!
+  lastName: String!
+  avatar: String
+  sex: String!
+  age: Int!
+  token: ID
+  job: String
+}
+
+type fodMap implements QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  data: [foodCategory]
+}
+
+type foodCategory  {
+  name: String!
+  image: String!
+  foods: [food!]
+}
+
+type food {
+  aliment: String!
+  trigger: Int!
+}
+
+type crisesResponse implements QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  data: [crise]
+}
+
+type crise {
+  date: DateTime!
+  intensity: Int!
+}
+
+type widgetResponse implements QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  data: [widget]!
+}
+
+type widget {
+  name: String!
+  desc: String!
+  image: String!
+  tags: [String]
+}
+
+
