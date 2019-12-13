@@ -6,12 +6,25 @@ type Query {
   crises(token: ID!): crisesResponse!
   widget: widgetResponse!
   userFromToken(token: ID!): UserResponse!
+  singIn(firstName: String!, lastName: String!, password: String!, email: String!, sex: String!, age: Int!, job: String): singInResponse!
+  login(email: String!, password: String!): singInResponse!
 }
 
 interface QueryResponse {
   code: String!
   success: Boolean!
   message: String!
+}
+
+type singInResponse implements QueryResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  data: singInToken
+}
+
+type singInToken {
+  token: String!
 }
 
 type UserResponse implements QueryResponse {
@@ -24,6 +37,8 @@ type UserResponse implements QueryResponse {
 type User {
   firstName: String!
   lastName: String!
+  password: String!
+  email: String!
   avatar: String
   sex: String!
   age: Int!
