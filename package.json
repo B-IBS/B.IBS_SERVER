@@ -1,0 +1,30 @@
+{
+  "name": "b.ibs_server",
+  "version": "0.3.0",
+  "description": "b.ibs api",
+  "main": "index.ts",
+  "scripts": {
+    "start": "dotenv -- nodemon -e ts,graphql -x ts-node index.ts",
+    "debug": "dotenv -- nodemon -e ts,graphql -x ts-node --inspect index.ts",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-IBS/B.IBS_SERVER.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/B-IBS/B.IBS_SERVER/issues"
+  },
+  "homepage": "https://github.com/B-IBS/B.IBS_SERVER#readme",
+  "devDependencies": {
+    "ts-node": "^7.0.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "dotenv-cli": "1.4.0",
+    "graphql": "^14.6.0",
+    "nodemon": "1.19.4"
+  }
+}

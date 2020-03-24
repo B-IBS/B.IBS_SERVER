@@ -4,4 +4,6 @@
 <br>
 
 ## Technologies
-- ### Apollo (TypeScript)
+- ### prisma
+- ### graphql
+- ### mysql
