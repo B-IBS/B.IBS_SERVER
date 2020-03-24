@@ -2,6 +2,8 @@ version: '3'
 services:
   prisma:
     image: prismagraphql/prisma:1.34
+    depends_on:
+      - "mysql"
     restart: always
     ports:
       - '4466:4466'
@@ -22,5 +24,13 @@ services:
       MYSQL_ROOT_PASSWORD: prisma
     volumes:
       - mysql:/var/lib/mysql
+  back-end:
+    restart: always
+    container_name: "back-end"
+    build: .
+    depends_on:
+      - "prisma"
+    ports:
+      - "8080:4000"
 volumes:
   mysql: ~
