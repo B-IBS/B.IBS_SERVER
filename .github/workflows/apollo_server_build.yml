@@ -1,29 +1,23 @@
-name: Node CI
+name: Docker Image CI
 
 on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Get dependency
-      run: npm i
-      working-directory: ./server
-      env:
-        CI: true
-    - name: Build servers
-      run: npm run build
-      working-directory: ./server
-      env:
-        CI: true
+      - uses: actions/checkout@v1
+      - name: Build the docker-compose
+        run: docker-compose build
+      - name: Up docker-compse
+        run: docker-compose up -d
+      - name: Sleep
+        uses: jakejarvis/wait-action@master
+        with:
+        time: '60s'
+      - name: Check running containers
+        run: docker ps -a | grep "back-end\|bibs_server_prisma_1\|bibs_server_mysql_1"
+      - name: Run test suite
+        run: echo "On peut faire des par container ici"
+      - name: Close container
+        run: docker-compose down
