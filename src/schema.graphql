@@ -1,0 +1,9 @@
+scalar JSON
+
+type Query {
+    helloworld: String
+}
+
+type Mutation {
+    helloworld: String
+}

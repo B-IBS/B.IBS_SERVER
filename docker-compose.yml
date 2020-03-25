@@ -7,6 +7,9 @@ services:
     restart: always
     ports:
       - '4466:4466'
+    networks:
+      - back-tier
+      - db-tier
     environment:
       PRISMA_CONFIG: |
         port: 4466
@@ -22,6 +25,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: prisma
+    networks:
+      - db-tier
     volumes:
       - mysql:/var/lib/mysql
   back-end:
@@ -31,6 +36,13 @@ services:
     depends_on:
       - "prisma"
     ports:
-      - "8080:4000"
+      - "4000:4000"
+    networks:
+      - back-tier
 volumes:
   mysql: ~
+networks:
+  back-tier:
+    driver: bridge
+  db-tier:
+    driver: bridge
